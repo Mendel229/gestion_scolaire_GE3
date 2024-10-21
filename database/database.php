@@ -9,7 +9,7 @@
 
         public function connect(){
             try {
-                $this->connexion = new PDO("mysql:host={$this->db_host};dbmane={$this->db_name}",$this->db_user, $this->db_pass);
+                $this->connexion = new PDO("mysql:host={$this->db_host};dbname={$this->db_name}",$this->db_user, $this->db_pass);
             } catch (PDOException $th) {
                 throw $th;
             }

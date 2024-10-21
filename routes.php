@@ -10,6 +10,12 @@
         if ($controller=="Auth") {
             if ($action== "login") {
                 $controllerObjet->login();
+            } else if ($action== "signUp") {
+                $controllerObjet->AddUser();
+            }
+        } else if ($controller== "Dash") {
+            if ($action== "showDash") {
+                $controllerObjet->showDash();
             }
         }
     }else {
