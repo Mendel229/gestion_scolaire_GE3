@@ -44,14 +44,19 @@
     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
   
     <i class="bi bi-file-person"></i>
-        <span class="d-none d-md-block dropdown-toggle ps-2">Profile</span>
+        <span class="d-none d-md-block dropdown-toggle ps-2">
+            <?php
+                $firstLetter = strtoupper(substr($_SESSION["nom"], 0, 1));
+                echo $firstLetter .". ". $_SESSION["prenom"];
+            ?>
+        </span>
     </a><!-- End Profile Iamge Icon -->
 
     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
             
-        <h6>Profile</h6>
-        <span>Profession</span>
+        <h6><?php echo $_SESSION["nom"]." ".$_SESSION["prenom"]; ?></h6>
+        <span><?php echo $_SESSION["type"]; ?></span>
         </li>
         <li>
         <hr class="dropdown-divider">
@@ -88,7 +93,7 @@
         </li>
 
         <li>
-        <a class="dropdown-item d-flex align-items-center" href="#">
+        <a class="dropdown-item d-flex align-items-center" href="index.php?controller=Auth&action=logout">
             <i class="bi bi-box-arrow-right"></i>
             <span>Déconnexion</span>
         </a>

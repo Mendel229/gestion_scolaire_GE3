@@ -1,4 +1,9 @@
 <?php
+    $success='<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Enregistrement effectué avec succès
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                ';
     $erreur_mail='<div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Le mail entré n\'existe pas!
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -8,7 +13,7 @@
                 Mot de passe incorrect!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            ';            
+            ';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +60,9 @@
   <main>
     <div class="container">
     <?php
+        if (isset($_GET["success"])) {
+          echo $success;
+        }
         if(isset($_GET["erreur_mail"])){
             echo $erreur_mail;
         }

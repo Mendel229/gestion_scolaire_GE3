@@ -25,6 +25,12 @@
 
             require"views/auth/login.php";
         }
+
+        public function logout(){
+            session_destroy();
+            header("location:index.php?controller=Auth&action=login");
+            exit();
+        }
         public function addUser(){
             $bdd = new AuthModel();
             if(isset($_POST["btn"])){
@@ -33,7 +39,7 @@
                     if ($_POST["pw1"] == $_POST["pw2"]){
                         $mdp_hash = password_hash($_POST["pw1"], PASSWORD_DEFAULT);
                         $req2 = $bdd -> addUser($_POST["nom"], $_POST["prenom"], $_POST["mail_user"], $_POST["type"], $mdp_hash);
-                        header('location:index.php?controller=Auth&action=signUp&success=1');
+                        header('location:index.php?controller=Auth&action=login&success=1');
                     }else{
                         header('location:index.php?controller=Auth&action=signUp&erreurMdp=1');
                     }

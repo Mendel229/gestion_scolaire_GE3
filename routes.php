@@ -12,6 +12,8 @@
                 $controllerObjet->login();
             } else if ($action== "signUp") {
                 $controllerObjet->AddUser();
+            }else if ($action== "logout") {
+                $controllerObjet->logout();
             }
         } else if ($controller== "Dash") {
             if ($action== "showDash") {
