@@ -19,8 +19,12 @@
             if ($action== "showDash") {
                 $controllerObjet->showDash();
             }
-        }
+        } else if ($controller== "Year") {
+            if ($action== "addYear") {
+                $controllerObjet->addYear();
+            }
     }else {
         echo"Le controller n'existe pas";
     }
+}
 ?>
