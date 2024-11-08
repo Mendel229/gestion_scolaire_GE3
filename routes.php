@@ -14,6 +14,8 @@
                 $controllerObjet->AddUser();
             }else if ($action== "logout") {
                 $controllerObjet->logout();
+            }else if ($action== "upMdp") {
+                $controllerObjet->upMdp();
             }
         } else if ($controller== "Dash") {
             if ($action== "showDash") {

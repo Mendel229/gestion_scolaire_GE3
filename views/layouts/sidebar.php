@@ -113,7 +113,7 @@
             </a>
         </li>
         <li>
-            <a href="charts-apexcharts.html">
+            <a href="index.php?controller=Year&action=addYear">
             <i class="bi bi-circle"></i><span>Gestion des années scolaires</span>
             </a>
         </li>
